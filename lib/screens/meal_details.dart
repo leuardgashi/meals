@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meals/models/meal.dart';
 import 'package:meals/providers/favorites_provider.dart';
 
-class MealDeatilScreen extends ConsumerWidget {
-  const MealDeatilScreen({
+class MealDetailsScreen extends ConsumerWidget {
+  const MealDetailsScreen({
     super.key,
     required this.meal,
   });
@@ -29,11 +29,11 @@ class MealDeatilScreen extends ConsumerWidget {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text(
-                      wasAdded ? 'Meal added as a favorite.' : 'Meal removed'),
+                      wasAdded ? 'Meal added as a favorite.' : 'Meal removed.'),
                 ),
               );
             },
-            icon: Icon(isFavorite ? Icons.start : Icons.star_border),
+            icon: Icon(isFavorite ? Icons.star : Icons.star_border),
           )
         ]),
         body: SingleChildScrollView(
@@ -57,7 +57,7 @@ class MealDeatilScreen extends ConsumerWidget {
               for (final ingredient in meal.ingredients)
                 Text(
                   ingredient,
-                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: Theme.of(context).colorScheme.onBackground,
                       ),
                 ),

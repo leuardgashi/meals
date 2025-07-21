@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MeailItemTrait extends StatelessWidget {
-  const MeailItemTrait({
+class MealItemTrait extends StatelessWidget {
+  const MealItemTrait({
     super.key,
     required this.icon,
     required this.label,
